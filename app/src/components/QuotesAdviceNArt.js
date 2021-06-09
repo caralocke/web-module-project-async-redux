@@ -1,12 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import QuoteAdviceNArt from './QuoteAdviceNArt';
 
-function QuotesAdviceNArt (props) {
+function QuotesAdviceNArt ({isFetching, list}) {
   return (
     <main>
-      {[].map(elem => <QuoteAdviceNArt/>)}
+      {isFetching ?
+       <h2>Fetching Quotes, Advice and Art</h2> :
+       list.map(elem => <QuoteAdviceNArt/>)}
     </main>
   );
 };
 
-export default QuotesAdviceNArt;
+const stateToProps = (state) => {
+  return {
+    isFetching: state.isFetching,
+    list: state.list
+  };
+};
+
+export default connect(stateToProps)(QuotesAdviceNArt);
