@@ -10,9 +10,13 @@ function Arts (props) {
         <h3>Fetching your art...</h3> :
         props.errors.length ?
         <h3>We've encountered an error: {props.errors}</h3> :
-        <div>
-          {props.artList.map(elem => <Art title={elem.title} imgURL={elem.imgURL}/>)}
-        </div>
+        <>
+          {props.artList.map(elem => <Art
+                                       key={elem.image_id}
+                                       title={elem.title}
+                                       id={elem.image_id}
+                                       imgURL={elem.imgURL}/>)}
+        </>
       }
     </main>
   );

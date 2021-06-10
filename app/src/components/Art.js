@@ -1,15 +1,11 @@
 import React from 'react';
 
-function Art ({title, imgURL}) {
+function Art ({id, title, imgURL}) {
   return (
-    <div className="Art">
-      {imgURL &&
-       <>
-         <h5>{title}</h5>
-         <img src={imgURL}/>
-       </>
-      }
-    </div>
+          <div className="Art">
+            <h5>{title}</h5>
+            <img src={imgURL}/>
+          </div>
   );
 };
 

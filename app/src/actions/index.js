@@ -3,20 +3,24 @@ export const FETCH_START = 'FETCH_START';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAIL = 'FETCH_FAIL';
 
-const getArt = async () => {
+const getArt = () => {
   const articPage = Math.floor((Math.random() * 538));
-  let {data} = await axios.get(
+  return axios.get(
     `https://api.artic.edu/api/v1/artworks?page=${articPage}&limit=10&fields=title,image_id`
-  );
-  let baseUrl = await data.config.iiif_url;
-  data = await data.data; // I feel so stupid right now
-  data = await data.map(imgObj => {
-    return {
-      title: imgObj.title,
-      imgURL: `${baseUrl}/${imgObj.image_id}/full/843,/0/default.jpg`
-    };
-  });
-  return data;
+  )
+    .then(res => {
+      const baseURL = res.data.config.iiif_url;
+      const artList = [ ...res.data.data ];
+      return artList.map(elem => {
+        return {
+          ...elem,
+          imgURL: `${baseURL}/${elem.image_id}/full/400,/0/default.jpg`
+        };
+      });
+    })
+    .catch(err => {
+      return err;
+    });
 };
 
 export const dispatchList = () => {
