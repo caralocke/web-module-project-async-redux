@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+    background: #edb09a;
+    text-align: center;
 }
 
 nav {
@@ -10,8 +11,23 @@ nav {
     padding: 1% 2%;
 }
 
-main {
+nav button {
+    border: 0;
+    border-radius: 1rem;
+    width: 25%;
+    background: #fff5e6;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 3px 3px #e3b394;
+    box-sizing: border-box;
+}
+
+nav button:active {
     background: #edb09a;
+    box-shadow: inset 2px 3px 3px #d49d8a;
+}
+
+main {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +44,7 @@ div.Art {
 
 img {
     width: 100%;
+    border-radius: 0 0 1rem 1rem;
 }
 
 h3 {
@@ -36,6 +53,8 @@ h3 {
 
 h5 {
     background: #fff5e6;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 0 0;
 }
 
