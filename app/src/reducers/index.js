@@ -1,6 +1,6 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL} from "../actions";
 const initialState = {
-  isFetching: false,
+  isFetching: true,
   artList: [],
   errors: ''
 };

@@ -19,11 +19,16 @@ const getArt = async () => {
   return data;
 };
 
-console.log(getArt());
-
 export const dispatchList = () => {
   return (dispatch) => {
     dispatch(fetchStart());
+    getArt()
+      .then(res => {
+        dispatch(fetchSuccess(res));
+      })
+      .catch(err => {
+        dispatch(fetchFail(err));
+      });
   };
 };
 

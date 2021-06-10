@@ -1,15 +1,27 @@
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 import Nav from './components/Nav';
-import QuotesAdviceNArt from './components/QuotesAdviceNArt';
+import Arts from './components/Arts';
 
-function App() {
+import { dispatchList } from './actions';
+
+function App(props) {
+  useEffect(() => {
+    props.dispatchList();
+  }, []);
+
   return (
     <div className="App">
       <Nav/>
-      <QuotesAdviceNArt/>
+      <Arts/>
     </div>
   );
 }
 
-export default App;
+const stateToProps = (state) => ({
+  artList: state.artList
+});
+
+export default connect(stateToProps, { dispatchList })(App);
