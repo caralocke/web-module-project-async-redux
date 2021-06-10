@@ -1,7 +1,7 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL} from "../actions";
 const initialState = {
   isFetching: false,
-  list: [],
+  artList: [],
   errors: ''
 };
 
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       isFetching: false,
-      list: action.payload
+      artList: action.payload
     };
   case(FETCH_FAIL):
     return {
