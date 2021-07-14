@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { dogReducer } from './reducers/dogReducer';
+import thunk from 'redux-thunk'
+
+const store = createStore(dogReducer, applyMiddleware(thunk))
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
