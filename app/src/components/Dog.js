@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react' //import React and useEffect
 import { connect } from 'react-redux' //import connect
-import { getDog } from '../actions/dogActions' //import getDog
+import { getDog } from '../actions' //import getDog
+import styled from 'styled-components' //import styled
+
 
 const Dog = (props) => {
     console.log('Dog props', props)

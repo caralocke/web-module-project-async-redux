@@ -1,4 +1,4 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../actions/dogActions";
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "../actions";
 
 const initialState = {
     dog: {
@@ -8,7 +8,7 @@ const initialState = {
     error: ''
 }
 
-export const dogReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_START:
             return ({
