@@ -4,8 +4,15 @@ import './App.css';
 import Dog from './components/Dog';
 import styled from 'styled-components'; //import styled
 
-const styledApp = styled.div`
-
+const StyledApp = styled.div`
+  background-image: url('https://wallpaperaccess.com/full/340452.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `
 
 function App() {
@@ -17,11 +24,11 @@ function App() {
          })
   },[])
   return (
-    <div className="App">
+    <StyledApp>
         <h1> Love all the doggos</h1>
         <h2>🐕</h2>
         <Dog />
-    </div>
+    </StyledApp>
   );
 }
 

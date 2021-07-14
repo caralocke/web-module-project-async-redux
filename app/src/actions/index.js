@@ -17,7 +17,7 @@ export const getDog = () => {
          .catch(err => {
            //4. If fetch fails, Fetch_fail with error message
            console.log('err', err)
-        //    dispatch({type:FETCH_FAIL, payload: err})
+           dispatch({type:FETCH_FAIL, payload: err})
          })
 
     }
@@ -26,8 +26,8 @@ export const getDog = () => {
 export const fetchStart = () => {
     return ({type:FETCH_START})
 }
-export const fetchSuccess = (person) => {
-    return ({type:FETCH_SUCCESS, payload: person})
+export const fetchSuccess = (dog) => {
+    return ({type:FETCH_SUCCESS, payload: dog})
 }
 
 export const fetchFail = (err) => {
